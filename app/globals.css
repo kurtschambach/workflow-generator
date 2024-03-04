@@ -2,32 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: 'IBM Plex';
+  src: url('../fonts/ibm_plex/IBM-Plex-Mono/fonts/complete/otf/IBMPlexMono-Regular.otf') format('opentype');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+*:focus-visible {
+  @apply outline-none ring-2 ring-text ring-offset-4 rounded-lg ring-offset-bg;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+::selection {
+  background-color: #5f8a9f;
+  color: #171717;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+::-moz-selection {
+  background-color: #5f8a9f;
+  color: #171717;
+}
+
+body, html {
+  font-family: 'IBM Plex', monospace, sans-serif;
 }
